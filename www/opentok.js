@@ -254,8 +254,10 @@ TBUpdateObjects = function() {
     console.log("JS sessionId: " + streamId);
     id = e.id;
     position = getPosition(id);
-    console.log("JS Position: " + position);
-    console.log("JS Ratios: " + ratios);
+    console.log('JS - TBUpdateObjects: ratios.widthRatio = ' + ratios.widthRatio);
+    console.log('JS - TBUpdateObjects: ratios.heightRatio = ' + ratios.heightRatio);
+    console.log('JS - TBUpdateObjects: position.top = ' + position.top);
+    console.log('JS - TBUpdateObjects: position.left = ' + position.left);
     Cordova.exec(TBSuccess, TBError, OTPlugin, "updateView", [streamId, position.top, position.left, position.width, position.height, TBGetZIndex(e), ratios.widthRatio, ratios.heightRatio]);
   }
 };
@@ -344,6 +346,8 @@ TBPublisher = (function() {
     cameraName = "front";
     zIndex = TBGetZIndex(document.getElementById(this.domId));
     ratios = TBGetScreenRatios();
+    console.log('JS: ratios.widthRatio = ' + ratios.widthRatio);
+    console.log('JS: ratios.heightRatio = ' + ratios.heightRatio);
     audioFallbackEnabled = "true";
     audioBitrate = 40000;
     audioSource = "true";
@@ -389,6 +393,10 @@ TBPublisher = (function() {
     position = getPosition(this.domId);
     TBUpdateObjects();
     OT.getHelper().eventing(this);
+    console.log('JS - TBPublisher: ratios.widthRatio = ' + ratios.widthRatio);
+    console.log('JS - TBPublisher: ratios.heightRatio = ' + ratios.heightRatio);
+    console.log('JS - TBPublisher: position.top = ' + position.top);
+    console.log('JS - TBPublisher: position.left = ' + position.left);
     Cordova.exec(TBSuccess, TBError, OTPlugin, "initPublisher", [name, position.top, position.left, width, height, zIndex, publishAudio, publishVideo, cameraName, ratios.widthRatio, ratios.heightRatio, audioFallbackEnabled, audioBitrate, audioSource, videoSource, frameRate, resolution]);
     Cordova.exec(this.eventReceived, TBSuccess, OTPlugin, "addEvent", ["publisherEvents"]);
   }
@@ -970,6 +978,10 @@ TBSubscriber = (function() {
     position = getPosition(obj.id);
     ratios = TBGetScreenRatios();
     pdebug("final subscriber position", position);
+    console.log('JS - TBSubscriber: ratios.widthRatio = ' + ratios.widthRatio);
+    console.log('JS - TBSubscriber: ratios.heightRatio = ' + ratios.heightRatio);
+    console.log('JS - TBSubscriber: position.top = ' + position.top);
+    console.log('JS - TBSubscriber: position.left = ' + position.left);
     Cordova.exec(TBSuccess, TBError, OTPlugin, "subscribe", [stream.streamId, position.top, position.left, width, height, zIndex, subscribeToAudio, subscribeToVideo, ratios.widthRatio, ratios.heightRatio]);
   }
 
