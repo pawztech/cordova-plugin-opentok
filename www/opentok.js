@@ -3609,4 +3609,8 @@ DefaultHeight = 198;;
     }
   };
 
+  //Tiny hack to make the plugin work with
+  //https://github.com/aullman/OpenTok-Angular
+  window.OT.$ = window.OTHelpers;
+
 })(window, window.OTHelpers);
