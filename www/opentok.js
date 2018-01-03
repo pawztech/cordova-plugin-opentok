@@ -254,9 +254,8 @@ TBUpdateObjects = function() {
     console.log("JS sessionId: " + streamId);
     id = e.id;
     position = getPosition(id);
-    console.log("JS Position: ", position);
-    console.log("JS Ratios: ", ratios);
-    throw new Error('JS Ratios', ratios, position);
+    console.log("JS Position: " + position);
+    console.log("JS Ratios: " + ratios);
     Cordova.exec(TBSuccess, TBError, OTPlugin, "updateView", [streamId, position.top, position.left, position.width, position.height, TBGetZIndex(e), ratios.widthRatio, ratios.heightRatio]);
   }
 };
