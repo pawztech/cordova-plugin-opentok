@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
     xmlns:android="http://schemas.android.com/apk/res/android"
     id="com.tokbox.cordova.opentok"
-    version="3.0.0">
+    version="3.1.0">
 
     <name>OpenTokCordovaPlugin</name>
     <description>Add live video streaming to your Cordova Application</description>
@@ -21,7 +21,7 @@
         <uses-permission android:name="android.permission.WAKE_LOCK" />
         <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS" />
         <uses-feature android:name="android.hardware.camera" android:required="true" />
-        <uses-feature android:name="android.hardware.camera.autofocus" android:required="true" />
+        <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
       </config-file>
 
       <!-- copy opentok sdk -->
