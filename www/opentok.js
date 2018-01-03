@@ -1,3 +1,5 @@
+(function() {
+    window.jasmine = {getEnv: function () {}};
 window.OT = {
   checkSystemRequirements: function() {
     return 1;
@@ -3614,3 +3616,4 @@ DefaultHeight = 198;;
   window.OT.$ = window.OTHelpers;
 
 })(window, window.OTHelpers);
+})();
