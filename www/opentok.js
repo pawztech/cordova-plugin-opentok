@@ -286,10 +286,10 @@ TBGetZIndex = function(ele) {
 
 TBGetScreenRatios = function() {
   return {
-    //widthRatio: window.outerWidth / window.innerWidth,
-    //heightRatio: window.outerHeight / window.innerHeight
-    widthRatio: window.devicePixelRatio,
-    heightRatio: window.devicePixelRatio
+    widthRatio: window.outerWidth / window.innerWidth,
+    heightRatio: window.outerHeight / window.innerHeight
+    //widthRatio: window.devicePixelRatio,
+    //heightRatio: window.devicePixelRatio
   };
 };
 
